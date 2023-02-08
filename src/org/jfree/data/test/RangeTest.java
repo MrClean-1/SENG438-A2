@@ -1,117 +1,125 @@
 package org.jfree.data.test;
 
-import static org.junit.Assert.*; import org.jfree.data.Range; import org.junit.*;
+import static org.junit.Assert.*;
 
+import org.jfree.data.Range;
+import org.junit.*;
 
 public class RangeTest {
-    private Range exampleRange;
-    @BeforeClass public static void setUpBeforeClass() throws Exception {
-    }
+    private static Range exampleRange, largeRange;
 
-    
-    // EXAMPLE
-    @Before
-    public void setUp() throws Exception { exampleRange = new Range(-1, 1);
-    }
+    @BeforeClass
+    public static void setUpBeforeClass() {
+        exampleRange = new Range(-1, 1);
+        largeRange = new Range(-99995.875, 139995.875);
 
+    }
 
     @Test
-    public void centralValueShouldBeZero() {
-        assertEquals("The central value of -1 and 1 should be 0",
-        0, exampleRange.getCentralValue(), .000000001d);
+    public void getCentralValueTestZero() {
+        assertEquals(0, exampleRange.getCentralValue(), .000000001d);
     }
 
-    @After
-    public void tearDown() throws Exception {
+    @Test
+    public void getCentralValueTestLargeRange() {
+        assertEquals(20000, largeRange.getCentralValue(), .000000001d);
     }
-    
-    //getLength
-//    @Before
-//    public void setUpLength() throws Exception { exampleRange = new Range(-1, 1);
-//    }
-
 
     //length
     @Test
-    public void lengthShouldBeTwo() {
-        assertEquals("The length of -1 and 1 should be 2",
-        2, exampleRange.getLength(), .000000001d);
+    public void getLengthTestTwo() {
+        assertEquals(2, exampleRange.getLength(), .000000001d);
     }
-    
+
+    @Test
+    public void getLengthTestLargeRange() {
+        assertEquals(239991.75, largeRange.getLength(), .000000001d);
+    }
+
     //lowerBound
     @Test
-    public void lowerBoundShouldBeNegOne() {
-        assertEquals("The lower bound of -1 and 1 should be -1",
-        -1, exampleRange.getLowerBound(), .000000001d);
+    public void getLowerBoundTestNegOne() {
+        assertEquals(-1, exampleRange.getLowerBound(), .000000001d);
     }
-    
+
+    @Test
+    public void getLowerBoundTestLargeRange() {
+        assertEquals(-99995.875, largeRange.getLowerBound(), .000000001d);
+    }
+
     //upperBound
     @Test
-    public void upperBoundShouldBeOne() {
-        assertEquals("The upper bound of -1 and 1 should be 1",
-        1, exampleRange.getUpperBound(), .000000001d);
+    public void getUpperBoundTestOne() {
+        assertEquals(1, exampleRange.getUpperBound(), .000000001d);
     }
-    
+
+    @Test
+    public void getUpperBoundTestLargeRange() {
+        assertEquals(139995.875, largeRange.getUpperBound(), .000000001d);
+    }
+
     //contains
     @Test
-    public void containsOneShouldBeTrue() {
-    	boolean expected = true;
-    	boolean actual = exampleRange.contains(1);
-    	assertEquals("The value 1 should exist in the range of -1 to 1", expected, actual);
+    public void containsTestOneInRange() {
+        boolean expected = true;
+        boolean actual = exampleRange.contains(1);
+        assertEquals(expected, actual);
     }
-    
+
     @Test
-    public void containsNegOneShouldBeTrue() {
-    	boolean expected = true;
-    	boolean actual = exampleRange.contains(-1);
-    	assertEquals("The value -1 should exist in the range of -1 to 1", expected, actual);
+    public void containsTestNegOneInRange() {
+        boolean expected = true;
+        boolean actual = exampleRange.contains(-1);
+        assertEquals(expected, actual);
     }
-    
+
     @Test
-    public void containsZeroShouldBeTrue() {
-    	boolean expected = true;
-    	boolean actual = exampleRange.contains(0);
-    	assertEquals("The value 0 should exist in the range of -1 to 1", expected, actual);
+    public void containsTestZeroInRange() {
+        boolean expected = true;
+        boolean actual = largeRange.contains(0);
+        assertEquals(expected, actual);
     }
-    
+
     @Test
-    public void containsTwoShouldBeFalse() {
-    	boolean expected = false;
-    	boolean actual = exampleRange.contains(2);
-    	assertEquals("The value 2 should not exist in the range of -1 to 1", expected, actual);
+    public void containsTestTwoOutOfRange() {
+        boolean expected = false;
+        boolean actual = exampleRange.contains(2);
+        assertEquals(expected, actual);
     }
-    
+
     @Test
-    public void containsNegTwoShouldBeFalse() {
-    	boolean expected = false;
-    	boolean actual = exampleRange.contains(-2);
-    	assertEquals("The value -2 should not exist in the range of -1 to 1", expected, actual);
+    public void containsTestLargeNegOutOfRange() {
+        boolean expected = false;
+        boolean actual = largeRange.contains(-99999);
+        assertEquals(expected, actual);
     }
-    
+
+    @Test
+    public void containsTestLargePosOutOfRange() {
+        boolean expected = false;
+        boolean actual = largeRange.contains(140000);
+        assertEquals(expected, actual);
+    }
+
     //intersect
     @Test
-    public void intersectsShouldBeTrue() {
-    	boolean expected = true;
-    	boolean actual = exampleRange.intersects(-1, 2);
-    	assertEquals("The given range should overlap with the example range",
-        expected, actual);
+    public void intersectsTestInRange() {
+        boolean expected = true;
+        boolean actual = exampleRange.intersects(-1, 2);
+        assertEquals(expected, actual);
     }
-    
-    @Test
-    public void intersectsShouldBeFalse() {
-    	boolean expected = false;
-    	boolean actual = exampleRange.intersects(13, 200);
-    	assertEquals("The given range should not overlap with the example range",
-        expected, actual);
-    }
-    
-//    @After
-//    public void tearDownLength() throws Exception {
-//    }
 
-    @AfterClass
-    public static void tearDownAfterClass() throws Exception {
+    @Test
+    public void intersectsTestOutOfRangeAbove() {
+        boolean expected = false;
+        boolean actual = largeRange.intersects(139995.876, 149995.875);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void intersectsTestOutOfRangeBelow() {
+        boolean expected = false;
+        boolean actual = largeRange.intersects(-1099995, -99995.876);
+        assertEquals(expected, actual);
     }
 }
-
-
