@@ -6,8 +6,8 @@
 | -------------- | --- |
 | Student Names: |   Carter Drewes  |
 |                |   Farica Mago  |
-|                |   Michele PhamSamira Khan  |
-|                |     |
+|                |   Michele Pham  |
+|                |   Samira Khan |
 
 # 1 Introduction
 
