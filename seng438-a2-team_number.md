@@ -11,11 +11,11 @@
 
 # 1 Introduction
 
-Text…
+In this lab we used automated unit testing in order to test the methods of org.jfree.data.Range (in the package org.jfree.data) and the methods of org.jfree.data.DataUtilities (in the package org.jfree.data). We tested methods from each of these classes. In order to test these methods, we used Java SE, JUnit and JMock libraries. We specifically used JMock library for testing the methods of org.jfree.data.DataUtilities (in the package org.jfree.data).
 
 # 2 Detailed description of unit test strategy
 
-// including the input partitions you have designed
+// including the input partitions you have designed 
 
 # 3 Test cases developed
 
