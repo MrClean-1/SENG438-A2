@@ -15,7 +15,11 @@ In this lab we used automated unit testing in order to test the methods of org.j
 
 # 2 Detailed description of unit test strategy
 
-Since we are doing Black box testing, we decided to do 
+Since we are doing Black box testing, we decided to do Equivalence Class Testing (ECT) to test the 10 methods that we had to test from both of the classes. For both of these classes we made separate test classes, i.e. the test cases for the methods of org.jfree.data.Range are in "RangeTest.java" and the test cases for the moethods of org.jfree.data.DataUtilities are in "DataUtilitiesTest.java".
+
+The following methods were tested in RangeTest.java in the following manner:
+
+1) getLength(): This function was tested using 
 
 # 3 Test cases developed
 
@@ -32,7 +36,7 @@ To start of the lab, each group member was responsible for familiarizing themsel
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-Text….
+Prior to this lab, the group, in general had very minimal knowledge of JUnit testing. This is another reason why we have decided to partner up and work on two devices rather than let each member work on their own. There were some challenges/difficulties that the group encountered. For example when creating tests, we originally thought that we only needed one test per class, but with equivalence class testing, we had to create more than just one test per class. Another challenge was understanding JMock since most of the group was unfamiliar with it prior to this course. Throughout this lab, members became more comfortable with writing JUnit tests, using Eclipse, and more
 
 # 6 Comments/feedback on the lab itself
 
