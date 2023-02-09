@@ -32,7 +32,7 @@ To start of the lab, each group member was responsible for familiarizing themsel
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-Text…
+Text….
 
 # 6 Comments/feedback on the lab itself
 
