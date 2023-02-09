@@ -36,7 +36,7 @@ To start of the lab, each group member was responsible for familiarizing themsel
 
 # 5 Difficulties encountered, challenges overcome, and lessons learned
 
-Prior to this lab, the group, in general had very minimal knowledge of JUnit testing. This is another reason why we have decided to partner up and work on two devices rather than let each member work on their own. There were some challenges/difficulties that the group encountered. For example when creating tests, we originally thought that we only needed one test per class, but with equivalence class testing, we had to create more than just one test per class. Another challenge was understanding JMock since most of the group was unfamiliar with it prior to this course. Throughout this lab, members became more comfortable with writing JUnit tests, using Eclipse, and more
+Prior to this lab, the group, in general had very minimal knowledge of JUnit testing. This is another reason why we have decided to partner up and work on two devices rather than let each member work on their own. There were some challenges/difficulties that the group encountered. For example when creating tests, we originally thought that we only needed one test per class, but with equivalence class testing, we had to create more than just one test per class. Another challenge was understanding JMock since most of the group was unfamiliar with it prior to this course. Throughout this lab, members became more comfortable with writing JUnit tests, using Eclipse, and more.
 
 # 6 Comments/feedback on the lab itself
 
