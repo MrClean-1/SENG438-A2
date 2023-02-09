@@ -2,11 +2,11 @@
 
 **Lab. Report \#2 – Requirements-Based Test Generation**
 
-| Group \#:      |     |
+| Group \#:      |  7   |
 | -------------- | --- |
-| Student Names: |     |
-|                |     |
-|                |     |
+| Student Names: |   Carter Drewes  |
+|                |   Farica Mago  |
+|                |   Michele PhamSamira Khan  |
 |                |     |
 
 # 1 Introduction
